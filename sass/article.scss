@@ -1,0 +1,195 @@
+@import "./variables" ;
+@import "./mixins";
+.article-header {
+    margin-top: 100px;
+
+    .header {
+        &-category {
+            font-size: 20px;
+        }
+
+        &-title {
+            margin: 30px auto 50px;
+        }
+    } 
+    
+}
+
+
+.article-main {
+
+
+    .article-subtitle {
+       margin: 10px 0 30px;
+    }
+
+    .article-datetime {
+        font-size: 20px;
+        padding: 10px 0;
+        background-color: rgba($color: #000000, $alpha: 0.10);
+        margin-bottom: 40px;
+        position: relative;
+
+        time {
+            margin-left: 25px;
+            &::before {
+                content: "";
+                position: absolute;
+                 left: 0;
+                 top: 0;
+                 height: 100%;
+                 width: 10px;
+                 background-color: $main-color;
+            }
+        }
+    }
+
+    .article-body {
+        p {
+            font-size: 22px;
+        }
+        h3 {
+            font-size: 30px;
+        }
+
+        .suggestes-stories {
+            margin-bottom: 50px;
+
+            .story-card {
+                .col-sm-8 {
+                    position: relative;
+
+                    p {
+                        position: absolute;
+                        top: 45%;
+                        font-size: 20px;
+                        font-weight: bold;
+                    }
+                }
+
+                
+            }
+        }
+
+        .do-it {
+            margin-bottom: 50px;
+        }
+
+        iframe {
+            margin-top: 50px;
+        }
+
+        .keyword {
+            font-size: 22px;
+            padding: 10px 25px ;
+            background-color: $light-gray-color;
+        }
+    }
+}
+
+
+.comments {
+    margin-bottom: 25px;
+
+    .comment {
+        &-textarea {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            border: 1px solid $gray-color;
+            border-radius: 5px;
+        }
+
+        &-card {
+            margin-top: 25px;
+                img {
+                    clip-path: circle();
+                }
+                .comment-text {
+                    padding: 20px;
+                    background-color: $light-gray-color;
+                    border-radius: 10px;
+                    position: relative;
+                    margin-top: 15px;
+                    margin-left: -15px;
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        height: 20px;
+                        width: 20px;
+                        top: 15px;
+                        left: -10px;
+                        transform: rotate(45deg);
+                        background-color: $light-gray-color;
+                    }
+
+                    span {
+                        font-size: 18px;
+                        font-weight: bold;
+                        margin-bottom: 25px;
+                    }
+
+                    p {
+                        font-size: 18px;
+                    }
+                }
+        }
+    }
+    
+    .button {
+        @include button ($main-color, $white-color, $main-color);
+        font-size: 22px;
+        margin-top: 25px;
+    }
+
+
+}
+
+.related-article {
+    .button {
+        @include button ($main-color, $white-color, $main-color);
+        margin-top: 25px;
+        margin-bottom: 25px;
+        font-size: 25px;
+    }
+}
+
+.most-read {
+    &-article {
+        position: relative;
+        margin-top: 25px;
+    }
+
+    &-text {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 10px;
+        background-color: rgba($color: #000000, $alpha: .3);
+        color: $white-color;
+
+        h4.article-title {
+            font-size: 22px;
+            display: block;
+            color: $white-color;
+        }
+    }
+}
+
+
+@media(max-width:1200px) {
+    footer{
+        .social-media-icon {
+            img {
+                width: 30px;
+            }
+        }
+    }   
+}
+
+@media(max-width:768px) {
+    footer {
+        margin-top: 50px;
+    }
+}
+
